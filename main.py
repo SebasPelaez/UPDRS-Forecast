@@ -2,10 +2,10 @@
 import numpy as np
 import pandas as pd
 
-from MultipleLinearRegression import Regression
-from RandomForest import RandomForest
-from SupportVectorRegression import SupportVectorRegression
-from NeuronalNetwork import NeuronalNetwork
+from Regression.MultipleLinearRegression import Regression
+from Forest.RandomForest import RandomForest
+from SVR.SupportVectorRegression import SupportVectorRegression
+from NeuronalNet.NeuronalNetwork import NeuronalNetwork
 
 #Organizar las variables de entrada y las variables a predecir
 full_data = pd.read_csv('https://raw.githubusercontent.com/SebasPelaez/ProyectoSimulacion/master/Data.csv?token=AOThxXzOdjEisj_b_dDeBvb7_oIZRPK1ks5a1hyAwA%3D%3D')
@@ -23,8 +23,12 @@ opcion = int(input("Que modelo desea ejecutar: "))
 #n_tress = int(input("Número de árboles: "))
 #RandomForest(X,Y,groups,n_tress)
 
-#kernel = int(input("Tipo de Kernel (1) Para Linear (2) Para RBF: "))
+#opcion = int(input("Tipo de Kernel (1) Para Linear (2) Para RBF: "))
+#if opcion == 1:
+#    kernel = 'linear'
+#else:
+#    kernel = 'rbf'
 #SupportVectorRegression(X,Y,groups,kernel)
 
-print("Red Neuronal Artificial")
-NeuronalNetwork(X,Y,groups)
+#print("Red Neuronal Artificial")
+#NeuronalNetwork(X,Y,groups)
