@@ -6,9 +6,11 @@ from Regression.MultipleLinearRegression import Regression
 from Forest.RandomForest import RandomForest
 from SVR.SupportVectorRegression import SupportVectorRegression
 from NeuronalNet.NeuronalNetwork import NeuronalNetwork
+from Regression.MultipleLinearRegressionFullCross import Regression2
 
 #Organizar las variables de entrada y las variables a predecir
-full_data = pd.read_csv('https://raw.githubusercontent.com/SebasPelaez/ProyectoSimulacion/master/Data.csv?token=AOThxXzOdjEisj_b_dDeBvb7_oIZRPK1ks5a1hyAwA%3D%3D')
+#full_data = pd.read_csv('https://raw.githubusercontent.com/SebasPelaez/ProyectoSimulacion/master/Data.csv?token=AOThxXzOdjEisj_b_dDeBvb7_oIZRPK1ks5a1hyAwA%3D%3D')
+full_data = pd.read_csv('./Data.csv')
 groups = full_data.iloc[:, 0:1].values
 x1 = full_data.iloc[:, 1:4].values
 x2 = full_data.iloc[:, 6:22].values
@@ -17,18 +19,21 @@ Y = full_data.iloc[:, 4:6].values
 
 opcion = int(input("Que modelo desea ejecutar: "))
 
+grade = int(input("Que grado del Polinomio: "))
+Regression(X,Y,groups,grade)
+
 #grade = int(input("Que grado del Polinomio: "))
-#Regression(X,Y,groups,grade)
+Regression2(X,Y,groups,grade)
 
-#n_tress = int(input("Número de árboles: "))
-#RandomForest(X,Y,groups,n_tress)
+n_tress = int(input("Número de árboles: "))
+RandomForest(X,Y,groups,n_tress)
 
-#opcion = int(input("Tipo de Kernel (1) Para Linear (2) Para RBF: "))
-#if opcion == 1:
-#    kernel = 'linear'
-#else:
-#    kernel = 'rbf'
-#SupportVectorRegression(X,Y,groups,kernel)
+opcion = int(input("Tipo de Kernel (1) Para Linear (2) Para RBF: "))
+if opcion == 1:
+    kernel = 'linear'
+else:
+    kernel = 'rbf'
+SupportVectorRegression(X,Y,groups,kernel)
 
 #print("Red Neuronal Artificial")
-#NeuronalNetwork(X,Y,groups)
+NeuronalNetwork(X,Y,groups)
