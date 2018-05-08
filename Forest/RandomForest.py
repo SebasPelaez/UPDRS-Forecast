@@ -39,6 +39,6 @@ def RandomForest(X,Y,groups,n_trees):
     MAE_matrix = np.asmatrix(MAE)
     MAPE_matrix = np.asmatrix(MAPE)
     for i in range(0,N):
-        print("El error cuadratrico medio de validación para la salida", i,"es (ECM):", np.mean(ECM_matrix[:,i]))
-        print("El error medio absoluto de validación para la salida", i,"es (MAE):", np.mean(MAE_matrix[:,i]))
-        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.mean(MAPE_matrix[:,i]),"%")
+        print("El error cuadratrico medio de validación para la salida", i,"es (ECM):", np.mean(ECM_matrix[:,i]),"+-",np.std(ECM_matrix[:,i]))
+        print("El error medio absoluto de validación para la salida", i,"es (MAE):", np.mean(MAE_matrix[:,i]),"+-",np.std(ECM_matrix[:,i]))
+        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.mean(MAPE_matrix[:,i]),"%","+-",np.std(ECM_matrix[:,i]),"%")

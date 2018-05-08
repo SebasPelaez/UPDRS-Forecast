@@ -23,7 +23,7 @@ def NeuronalNetwork(X,Y,groups):
       X_test = sc_X.transform(X_test)
       
       # Ajustar el modelo
-      neuronal_network = MLPRegressor(hidden_layer_sizes=(20, ),random_state=0,max_iter=1000)
+      neuronal_network = MLPRegressor(hidden_layer_sizes=(1, 8),random_state=0,max_iter=1000)
       multiple_output_regressor = MultiOutputRegressor(neuronal_network)
       
       multiple_output_regressor.fit(X_train, y_train)
@@ -41,6 +41,6 @@ def NeuronalNetwork(X,Y,groups):
     MAE_matrix = np.asmatrix(MAE)
     MAPE_matrix = np.asmatrix(MAPE)
     for i in range(0,N):
-        print("El error cuadratrico medio de validación para la salida", (i+1),"es (ECM):", np.mean(ECM_matrix[:,i]))
-        print("El error medio absoluto de validación para la salida", (i+1),"es (MAE):", np.mean(MAE_matrix[:,i]))
-        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.mean(MAPE_matrix[:,i]),"%")
+        print("El error cuadratrico medio de validación para la salida", i,"es (ECM):", np.mean(ECM_matrix[:,i]),"+-",np.std(ECM_matrix[:,i]))
+        print("El error medio absoluto de validación para la salida", i,"es (MAE):", np.mean(MAE_matrix[:,i]),"+-",np.std(ECM_matrix[:,i]))
+        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.mean(MAPE_matrix[:,i]),"%","+-",np.std(ECM_matrix[:,i]),"%")
