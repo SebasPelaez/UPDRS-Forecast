@@ -6,6 +6,7 @@ from Regression.MultipleLinearRegression import Regression
 from Forest.RandomForest import RandomForest
 from SVR.SupportVectorRegression import SupportVectorRegression
 from NeuronalNet.NeuronalNetwork import NeuronalNetwork
+from VentanaDeParzen.VentanaParzen import VentanaParzen
 
 #Organizar las variables de entrada y las variables a predecir
 #full_data = pd.read_csv('https://raw.githubusercontent.com/SebasPelaez/ProyectoSimulacion/master/Data.csv?token=AOThxXzOdjEisj_b_dDeBvb7_oIZRPK1ks5a1hyAwA%3D%3D')
@@ -18,12 +19,12 @@ Y = full_data.iloc[:, 4:6].values
 
 opcion = int(input("Que modelo desea ejecutar: "))
 
-#grade = int(input("Que grado del Polinomio: "))
-Regression(X,Y,groups,5)
+grade = int(input("Que grado del Polinomio: "))
+Regression(X,Y,groups,grade)
 
 
-#n_tress = int(input("Número de árboles: "))
-#RandomForest(X,Y,groups,500)
+n_tress = int(input("Número de árboles: "))
+RandomForest(X,Y,groups,n_tress)
 
 opcion = int(input("Tipo de Kernel (1) Para Linear (2) Para RBF: "))
 if opcion == 1:
@@ -32,5 +33,8 @@ else:
     kernel = 'rbf'
 SupportVectorRegression(X,Y,groups,'rbf')
 
-#print("Red Neuronal Artificial")
+print("Red Neuronal Artificial")
 NeuronalNetwork(X,Y,groups)
+
+opcion = float(input("Ingrese el ancho de la ventana"))
+VentanaParzen(X,Y,groups,opcion)
