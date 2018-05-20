@@ -8,6 +8,8 @@ from SVR.SupportVectorRegression import SupportVectorRegression
 from NeuronalNet.NeuronalNetwork import NeuronalNetwork
 from VentanaDeParzen.VentanaParzen import VentanaParzen
 
+from ReduccionDeDimensiones.AnalisisCaracteristicas import CoeficientePearson
+
 #Organizar las variables de entrada y las variables a predecir
 #full_data = pd.read_csv('https://raw.githubusercontent.com/SebasPelaez/ProyectoSimulacion/master/Data.csv?token=AOThxXzOdjEisj_b_dDeBvb7_oIZRPK1ks5a1hyAwA%3D%3D')
 full_data = pd.read_csv('./Data.csv')
@@ -38,3 +40,5 @@ NeuronalNetwork(X,Y,groups)
 
 opcion = float(input("Ingrese el ancho de la ventana"))
 VentanaParzen(X,Y,groups,opcion)
+
+CoeficientePearson(X,Y)
