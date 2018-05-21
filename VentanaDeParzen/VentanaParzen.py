@@ -1,11 +1,9 @@
 import numpy as np
 
-from sklearn.svm import SVR
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import GroupKFold
-from sklearn.multioutput import MultiOutputRegressor
 from sklearn.metrics import r2_score
 
 from VentanaDeParzen.KernelRegression import KernelRegression
@@ -20,7 +18,6 @@ def VentanaParzen(X,Y,groups,gamma):
     MAPE_so = []
     R2_SCORE_fo = []
     R2_SCORE_so = []
-    h = 0.05
     kr = KernelRegression(kernel="rbf", gamma=gamma)
     for train_index, test_index in lpgo.split(X, Y, groups):
       X_train, X_test = X[train_index], X[test_index]
@@ -39,7 +36,6 @@ def VentanaParzen(X,Y,groups,gamma):
       
       # Ajustar el modelo de ventana de parzen
       M = len(X_test)
-      N = len(X_train)
       y_pred_fo = np.zeros((M,1))
       y_pred_so = np.zeros((M,1))
       
