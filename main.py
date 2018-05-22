@@ -20,11 +20,8 @@ x2 = full_data.iloc[:, 6:22].values
 X = np.concatenate((x1,x2),axis=1)
 Y = full_data.iloc[:, 4:6].values
 
-opcion = int(input("Que modelo desea ejecutar: "))
-
 grade = int(input("Que grado del Polinomio: "))
 Regression(X,Y,groups,grade)
-
 
 n_tress = int(input("Número de árboles: "))
 RandomForest(X,Y,groups,n_tress)
@@ -45,3 +42,7 @@ VentanaParzen(X,Y,groups,opcion)
 CoeficientePearson(X,Y)
 
 selected_features = SFS(X,Y[:,0])
+
+X_sfs = X[:,(0,2,5,18)]
+opcion = float(input("Ingrese el ancho de la ventana"))
+VentanaParzen(X_sfs,Y,groups,opcion)

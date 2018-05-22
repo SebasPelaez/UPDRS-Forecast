@@ -7,6 +7,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.multioutput import MultiOutputRegressor
+from sklearn.metrics import r2_score
 
 def Regression(X,Y,groups,grade):
     lpgo = GroupKFold(n_splits=14)
