@@ -54,12 +54,12 @@ def VentanaParzen(X,Y,groups,gamma):
       R2_SCORE_fo.append(r2_score(y_test_fo, y_pred_fo))
       R2_SCORE_so.append(r2_score(y_test_so, y_pred_so))
     
-    print("El error cuadratrico medio de validación para la salida 1 es (ECM):", np.around(np.mean(ECM_fo),decimals=5),"+-",np.around(np.std(ECM_fo),decimals=5))
-    print("El error medio absoluto de validación para la salida 1  es (MAE):", np.around(np.mean(MAE_fo),decimals=5),"+-",np.around(np.std(MAE_fo),decimals=5))
-    print("El porcentaje de error medio absoluto de validación para la salida 1 es (MAPE):", np.around(np.mean(MAPE_fo),decimals=5),"%","+-",np.around(np.std(MAPE_fo),decimals=5),"%")
-    print("Coeficiente de determinación para la salida 1 es (R2):", np.around(np.mean(R2_SCORE_fo)),"%","+-",np.around(np.std(R2_SCORE_fo),decimals=5))
-    
-    print("El error cuadratrico medio de validación para la salida 2 es (ECM):", np.around(np.mean(ECM_so),decimals=5),"+-",np.around(np.std(ECM_so),decimals=5))
-    print("El error medio absoluto de validación para la salida 2 es (MAE):", np.around(np.mean(MAE_so),decimals=5),"+-",np.around(np.std(MAE_so),decimals=5))
-    print("El porcentaje de error medio absoluto de validación para la salida 2 es (MAPE):", np.around(np.mean(MAPE_so),decimals=5),"%","+-",np.around(np.std(MAPE_so),decimals=5),"%")
-    print("Coeficiente de determinación para la salida 2 es (R2):", np.around(np.mean(R2_SCORE_so)),"%","+-",np.around(np.std(R2_SCORE_so),decimals=5))
+    print("El error cuadratrico medio de validación para la salida 1 es (ECM):", np.around(np.mean(ECM_fo),decimals=3),"+-",np.around(np.std(ECM_fo),decimals=3))
+    print("El error medio absoluto de validación para la salida 1  es (MAE):", np.around(np.mean(MAE_fo),decimals=3),"+-",np.around(np.std(MAE_fo),decimals=3))
+    print("El porcentaje de error medio absoluto de validación para la salida 1 es (MAPE):", np.around(np.mean(MAPE_fo),decimals=3),"%","+-",np.around(np.std(MAPE_fo),decimals=3),"%")
+    print("Coeficiente de determinación para la salida 1 es (R2):", np.around(np.mean(R2_SCORE_fo),decimals=3),"%","+-",np.around(np.std(R2_SCORE_fo),decimals=3))
+
+    print("El error cuadratrico medio de validación para la salida 2 es (ECM):", np.around(np.mean(ECM_so),decimals=3),"+-",np.around(np.std(ECM_so),decimals=3))
+    print("El error medio absoluto de validación para la salida 2 es (MAE):", np.around(np.mean(MAE_so),decimals=3),"+-",np.around(np.std(MAE_so),decimals=3))
+    print("El porcentaje de error medio absoluto de validación para la salida 2 es (MAPE):", np.around(np.mean(MAPE_so),decimals=3),"%","+-",np.around(np.std(MAPE_so),decimals=3),"%")
+    print("Coeficiente de determinación para la salida 2 es (R2):", np.around(np.mean(R2_SCORE_so),decimals=3),"%","+-",np.around(np.std(R2_SCORE_so),decimals=3))

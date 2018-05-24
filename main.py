@@ -43,6 +43,5 @@ CoeficientePearson(X,Y)
 
 selected_features = SFS(X,Y[:,0])
 
-X_sfs = X[:,(0,2,5,18)]
-opcion = float(input("Ingrese el ancho de la ventana"))
-VentanaParzen(X_sfs,Y,groups,opcion)
+X_sfs = X[:,(0,1,2,4,15,16,17)]
+VentanaParzen(X_sfs,Y,groups,0.9)

@@ -47,10 +47,10 @@ def RandomForest(X,Y,groups,n_trees):
     R2_matrix = np.asmatrix(R2_SCORE)
        
     for i in range(0,N):
-        print("El error cuadratrico medio de validación para la salida", i,"es (ECM):", np.mean(ECM_matrix[:,i]))
-        print("El error medio absoluto de validación para la salida", i,"es (MAE):", np.mean(MAE_matrix[:,i]))
-        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.mean(MAPE_matrix[:,i]),"%")
-        print("Coeficiente de determinación para la salida", (i+1),"es (R2):", np.around(np.mean(R2_matrix[:,i])),"%","+-",np.around(np.std(R2_matrix[:,i]),decimals=5))
+        print("El error cuadratrico medio de validación para la salida", i,"es (ECM):", np.around(np.mean(ECM_matrix[:,i]),decimals=3),"+-",np.around(np.std(ECM_matrix[:,i]),decimals=3))
+        print("El error medio absoluto de validación para la salida", i,"es (MAE):", np.around(np.mean(MAE_matrix[:,i]),decimals=3),"+-",np.around(np.std(MAE_matrix[:,i]),decimals=3))
+        print("El porcentaje de error medio absoluto de validación para la salida", (i+1),"es (MAPE):", np.around(np.mean(MAPE_matrix[:,i]),decimals=3),"%","+-",np.around(np.std(MAPE_matrix[:,i]),decimals=3),"%")
+        print("Coeficiente de determinación para la salida", (i+1),"es (R2):", np.around(np.mean(R2_matrix[:,i])),"%","+-",np.around(np.std(R2_matrix[:,i]),decimals=3))
     
     relevant_features = np.asmatrix(relevant_features)
     print (np.mean(relevant_features,axis = 0))
